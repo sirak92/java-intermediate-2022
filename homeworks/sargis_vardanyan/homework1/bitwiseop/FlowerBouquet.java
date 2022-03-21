@@ -54,7 +54,7 @@ public class FlowerBouquet {
             if ((minusBouquet & 1) == 1) {
                 bouquetFlowerTypes.add(flowerTypes32Item[currentIndex]);
             }
-            bouquet >>>= 1;
+            minusBouquet >>>= 1;
             currentIndex++;
         }
         return bouquetFlowerTypes;

@@ -5,7 +5,9 @@ import java.util.List;
 import java.util.Scanner;
 
 public class BitwiseOperators {
-    //Task https://www.hackerrank.com/challenges/bitwise-operators-in-c/problem?h_r=internal-search&isFullScreen=true
+     /*
+        https://www.hackerrank.com/challenges/bitwise-operators-in-c/problem?h_r=internal-search&isFullScreen=true
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
@@ -17,11 +19,11 @@ public class BitwiseOperators {
 
     //Simple solution using for. Time complexity O(n^2)
     public static List<Integer> calcTheMax(int n, int k) {
-        int maxAnd = 1 & n;
-        int maxOr = 1 | n;
-        int maxXor = 1 ^ n;
+        int maxAnd = 0;
+        int maxOr = 0;
+        int maxXor = 0;
 
-        for (int i = 0; i <= n; i++) {
+        for (int i = 0; i < n; i++) {
             for (int j = i + 1; j <= n; j++) {
                 if ((i & j) > maxAnd && (i & j) < k) {
                     maxAnd = i & j;

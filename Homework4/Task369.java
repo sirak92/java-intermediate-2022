@@ -6,14 +6,14 @@
         int[] arr1 = {1, 5, 7, 12, 32, 0, 71, 6,};
         int[] arr2 = {4, 9, 7, 8, 3, 65, 1, 0};
         boolean condition;
-        int maxOfArr1=0;
+        int maxOfArr1 = 0;
 
-        for(int i = 0; i<arr1.length; i++){
-            if(maxOfArr1<arr1[i]){
-                maxOfArr1=arr1[i];
+        for(int i = 0; i < arr1.length; i++){
+            if(maxOfArr1 < arr1[i]){
+                maxOfArr1 = arr1[i];
             }
         }
-        int min=maxOfArr1;
+        int min = maxOfArr1;
 
 
 
@@ -28,8 +28,8 @@
             }
 
             if(condition) {
-                if(min>arr1[i]){
-                    min=arr1[i];
+                if(min > arr1[i]){
+                    min = arr1[i];
                 }
             }
         }

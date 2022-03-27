@@ -22,11 +22,11 @@ class Reversal{
 	static int reverse(int number){
 		int rev = 0;
 
-		while(number != 0)
-		rev *= 10;
-		rev += number % 10;
-		number /= 10;
-
+		while(number != 0){
+			rev *= 10;
+			rev += number % 10;
+			number /= 10;
+		}
 		return rev;
 	}
 }

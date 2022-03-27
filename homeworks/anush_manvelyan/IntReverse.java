@@ -5,7 +5,7 @@ public class IntReverse{
 
 		Scanner input = new Scanner(System.in);
 
-		Reversal num;
+		Reversal num = new Reversal();
 
 		System.out.print("\nEnter a number: ");
 		num.number = input.nextInt();
@@ -22,7 +22,7 @@ class Reversal{
 	static int reverse(int number){
 		int rev = 0;
 
-		while(number > 0)
+		while(number != 0)
 		rev *= 10;
 		rev += number % 10;
 		number /= 10;

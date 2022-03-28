@@ -10,7 +10,7 @@ public class Solution_312 {
         }while(n <= 0 || n > 100);
 
         int X[] = new int[100];
-        int Y[] = new int[50];
+        int Y[] = new int[100];
 
         System.out.println();
         for(int i = 0; i < n; ++i) {

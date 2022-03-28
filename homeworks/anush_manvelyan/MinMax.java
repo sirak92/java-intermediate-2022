@@ -1,6 +1,7 @@
 public class MinMax {
 
     public static void main(String[] args) {
+        
     	 Minimaxi x = new Minimaxi();
          x.a = 56;
          x.b = 42;

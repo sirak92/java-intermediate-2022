@@ -2,8 +2,10 @@ import java.util.Scanner;
 
 public class Solution_312 {
     public static void main(String[] args) {
+
         Scanner input = new Scanner(System.in);
         int n;
+        
         do{
             System.out.print("n = ");
             n = input.nextInt();
@@ -33,3 +35,5 @@ public class Solution_312 {
         }
     }
 }
+
+

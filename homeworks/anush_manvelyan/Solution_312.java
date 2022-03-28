@@ -22,7 +22,7 @@ public class Solution_312 {
 
         int j = 0;
         for (int i = 0; i < n - 1; ++i){
-            if (X[i] > Math.abs(X[i + 1]))
+            if (Math.abs(X[i]) > Math.abs(X[i + 1]))
                 Y[j++] = X[i];
             else
                 Y[j++] = X[i + 1];

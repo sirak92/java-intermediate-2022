@@ -5,7 +5,7 @@ public class Solution_312 {
 
         Scanner input = new Scanner(System.in);
         int n;
-        
+
         do{
             System.out.print("n = ");
             n = input.nextInt();
@@ -15,20 +15,22 @@ public class Solution_312 {
         int Y[] = new int[100];
 
         System.out.println();
-        for(int i = 0; i < n; ++i) {
+
+        for(int i = 0; i < n; ++i){
             System.out.print("X[" + i + "] = ");
             X[i] = input.nextInt();
         }
 
         int j = 0;
         for (int i = 0; i < n - 1; ++i){
-            if (X[i] > Math.abs(X[i + 1]))
+            if (Math.abs(X[i]) > Math.abs(X[i + 1]))
                 Y[j++] = X[i];
             else
                 Y[j++] = X[i + 1];
         }
 
         System.out.println();
+        
         for (int i = 0; i < j; ++i) {
             System.out.print("Y[" + i + "] = ");
             System.out.println(Y[i]);

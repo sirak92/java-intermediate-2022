@@ -1,11 +1,10 @@
 public abstract class Mammal implements Animal {
-    private boolean liveBirth;
-    private boolean warmBloodedness;
-    private int age;
+    private final boolean liveBirth;
+    private final boolean warmBlooded;
 
-    public Mammal(boolean liveBirth, boolean warmBloodedness) {
-        this.liveBirth = liveBirth;
-        this.warmBloodedness = warmBloodedness;
+    public Mammal() {
+        this.liveBirth = true;
+        this.warmBlooded = true;
     }
 
 
@@ -13,22 +12,9 @@ public abstract class Mammal implements Animal {
         return liveBirth;
     }
 
-    public void setLiveBirth(boolean liveBirth) {
-        this.liveBirth = liveBirth;
-    }
 
-    public boolean isWarmBloodedness() {
-        return warmBloodedness;
-    }
-
-    public void setWarmBloodedness(boolean warmBloodedness) {
-        this.warmBloodedness = warmBloodedness;
-    }
-
-    public String printInfo(){
-
-
-        return "Live birth " + this.liveBirth +'\n'+ "warmBloodedness "+ this.warmBloodedness;
+    public boolean isWarmBlooded() {
+        return warmBlooded;
     }
 
 

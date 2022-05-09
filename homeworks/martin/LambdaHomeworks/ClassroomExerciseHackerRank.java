@@ -27,24 +27,14 @@ interface PerformOperation3 {
 public class ClassroomExerciseHackerRank {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int lengthOfArray = sc.nextInt();
-        int a[] = new int[lengthOfArray];
-        for (int i = 0; i < lengthOfArray; i++) {
-            int k = sc.nextInt();
-            a[i] = sc.nextInt();
-            if (k == 1) {
-                PerformOperation1 performOperation1 = (q) -> {
+        PerformOperation1 performOperation1 = (q) -> {
                     if (q % 2 == 0) {
                         System.out.print("EVEN");
                     } else {
                         System.out.print("ODD");
                     }
                 };
-                performOperation1.isOdd(a[i]);
-                System.out.println();
-            }
-            if (k == 2) {
-                PerformOperation2 performOperation2 = (q) -> {
+        PerformOperation2 performOperation2 = (q) -> {
                     int x = q/2;
                     while (x > 1) {
                         if(q % x == 0) {
@@ -57,11 +47,7 @@ public class ClassroomExerciseHackerRank {
                         System.out.print("PRIME");
                     }
                 };
-                performOperation2.isPrime(a[i]);
-                System.out.println();
-            }
-            if (k == 3) {
-                PerformOperation3 performOperation3 = (q) -> {
+        PerformOperation3 performOperation3 = (q) -> {
                     int q2, qPal = 0;
                     q2 = q;
                     while (q > 0) {
@@ -74,6 +60,20 @@ public class ClassroomExerciseHackerRank {
                         System.out.print("NOT PALINDROME");
                     }
                 };
+        int lengthOfArray = sc.nextInt();
+        int a[] = new int[lengthOfArray];
+        for (int i = 0; i < lengthOfArray; i++) {
+            int k = sc.nextInt();
+            a[i] = sc.nextInt();
+            if (k == 1) {
+                performOperation1.isOdd(a[i]);
+                System.out.println();
+            }
+            if (k == 2) {
+                performOperation2.isPrime(a[i]);
+                System.out.println();
+            }
+            if (k == 3) {
                 performOperation3.isPalindrome(a[i]);
                 System.out.println();
             }

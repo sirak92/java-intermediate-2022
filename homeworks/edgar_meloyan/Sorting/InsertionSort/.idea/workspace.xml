@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d16ef154-f68d-4569-b35c-d859af5df745" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Sorted List/SortedList/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../IOStreamDemo/src/FileDemo.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../IOStreamDemo/src/FileDemo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LambdaTasks/src/SumOfArray.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../LambdaTasks/src/SumOfArray.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../LambdaTasks/src/Supplier.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../LambdaTasks/src/Supplier.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="28yqtGfq8BjhWfjopyVe1BUFRSh" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "D:/Java Lessons 2/Repo/java-intermediate-2022/homeworks/edgar_meloyan/Sorting",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="Sorting" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Sorting" />
+      <module name="InsertionSort" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Sorting" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d16ef154-f68d-4569-b35c-d859af5df745" name="Changes" comment="" />
+      <created>1652199387869</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1652199387869</updated>
+      <workItem from="1652199389305" duration="3360000" />
+      <workItem from="1652321307058" duration="100000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

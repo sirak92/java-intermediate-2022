@@ -1,8 +1,32 @@
 package generics;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
-public class SortedList<T extends Comparable> {
+public class SortedList<T extends Comparable<T>> {
+
+    T[] sort(T[] values) {
+        T temp = null;
+        for (int i = 0; i < values.length; i++) {
+            for (int j = 0; j < values.length; j++) {
+                if (values[i].compareTo(values[j]) < 0) {
+                    temp = values[j];
+                    values[j] = values[i];
+                    values[i] = temp;
+                }
+            }
+        }
+        return values;
+    }
+
+    T[] add(T[] array, T value) {
+
+        array = Arrays.copyOf(array, array.length + 1);
+        array[array.length - 1] = value;
+        T[] sortArray = sort(array);
+
+        return sortArray;
+    }
 
     int getIndex(T[] value, T element) {
         for (int i = 0; i < value.length; i++) {
@@ -14,11 +38,9 @@ public class SortedList<T extends Comparable> {
         return -1;
     }
 
-    T search(T[] value, T searchs) {
-        for (int i = 0; i < value.length; i++) {
-            if (value[i] == searchs) {
-                return searchs;
-            }
+    T search(T[] value, int index) {
+        if(index>=0&&index<=value.length){
+            return value[index];
         }
         return null;
     }
@@ -52,6 +74,8 @@ public class SortedList<T extends Comparable> {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = scanner.nextInt();
         }
+        System.out.println("enter the item to be added");
+        System.out.println(Arrays.toString(sortedList.add(arr, scanner.nextInt())));
         System.out.println("Imported value to get index");
         System.out.println(sortedList.getIndex(arr, scanner.nextInt()));
         System.out.println("Imported value to get the requested item");

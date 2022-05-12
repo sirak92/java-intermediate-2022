@@ -11,7 +11,6 @@ public class Sorting {
         System.out.println(Arrays.toString(array));
         System.out.println(Arrays.toString(array));
     }
-
     static void insertionSort(int[] array, int arraySize) {
         int element;
         int j;
@@ -26,7 +25,6 @@ public class Sorting {
             array[j + 1] = element;
         }
     }
-
     static void quickSort(int[] array, int left, int right) {
         if (left >= right) {
             return;

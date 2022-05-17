@@ -1,30 +1,40 @@
 package tech42;
 
-public class DoubleLinkedList<T extends Comparable<T>> {
-    Node head = null;
-    Node tail = null;
-    protected int countNodes = 0;
+public class DoubleLinkedList<T> {
+
+    public static class Node<T> {
+        T data;
+        Node<T> previous;
+        Node<T> next;
+
+        public Node(T data) {
+            this.data = data;
+        }
+    }
+
+    Node<T> head = null;
+    Node<T> tail = null;
+    int countNodes = 0;
 
     public void add(T data) {
-        Node node = new Node(data);
+        Node<T> node = new Node(data);
 
         if (head == null) {
             head = tail = node;
-            head.previous = null;
         } else {
             tail.next = node;
             node.previous = tail;
             tail = node;
         }
-        tail.next = null;
+
         ++countNodes;
     }
 
-    public Comparable get(int index) {
+    public T get(int index) {
         if (index < 0 || index >= countNodes) {
             throw new IndexOutOfBoundsException();
         } else {
-            Node cell = head;
+            Node<T> cell = head;
             for (int i = 0; i < index; ++i) {
                 cell = cell.next;
             }
@@ -33,18 +43,12 @@ public class DoubleLinkedList<T extends Comparable<T>> {
     }
 
     public void remove(T removableElement) {
-        Node deleteNode;
+        Node<T> deleteNode;
+        Node<T> temp = head;
 
-        while (head != null && head.data.compareTo(removableElement) == 0) {
-            deleteNode = head;
-            head = head.next;
-            deleteNode = null;
-        }
-
-        Node temp = head;
         if (temp != null) {
             while (temp.next != null) {
-                if (temp.next.data.compareTo(removableElement) == 0) {
+                if (temp.next.data.equals(removableElement)) {
                     deleteNode = temp.next;
                     temp.next = temp.next.next;
                     deleteNode = null;
@@ -61,10 +65,10 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         }
 
         int index = 0;
-        Node temp = head;
+        Node<T> temp = head;
 
         while (temp != null) {
-            if ((temp.data).compareTo(searchableElement) == 0) {
+            if ((temp.data).equals(searchableElement)) {
                 return true;
             }
             ++index;
@@ -74,7 +78,7 @@ public class DoubleLinkedList<T extends Comparable<T>> {
     }
 
     public void showLinkedList() {
-        Node chainNodes = head;
+        Node<T> chainNodes = head;
 
         if (head == null) {
             System.out.println("Your linked list is empty!");
@@ -87,5 +91,4 @@ public class DoubleLinkedList<T extends Comparable<T>> {
         }
         System.out.println();
     }
-
 }

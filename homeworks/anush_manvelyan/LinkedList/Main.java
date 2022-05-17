@@ -34,17 +34,18 @@ public class Main {
         linkedListStr.remove("abc");
         linkedListStr.showLinkedList();
 
-
         Queue<Integer> queue = new Queue();
-        queue.printQueue();
         queue.add(1);
         queue.add(2);
         queue.add(3);
         queue.add(4);
         queue.add(5);
-        queue.printQueue();
+        queue.printQ();
         queue.remove();
         queue.remove();
-        queue.printQueue();
+        System.out.println(queue.get(2));
+        queue.printQ();
+        System.out.println(queue.getSize());
+        queue.printQ();
     }
 }

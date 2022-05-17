@@ -1,51 +1,30 @@
 package tech42;
 
-public class Queue<T extends Comparable<T>> {
-    public Node front = null;
-    public Node rear = null;
+public class Queue<T> {
+    public DoubleLinkedList<T> queue = new DoubleLinkedList<>();
     int size = 0;
 
-    public void add(T value) {
-        Node nodeForQueue = new Node(value);
+    public void add(T element) {
+        queue.add(element);
+        size++;
+    }
 
-        if (front == null) {
-            front = nodeForQ)ueue;
-        } else {
-            rear.next = nodeForQueue;
-        }
-        ++size;
-        rear = nodeForQueue;
+    public T get(int index) {
+        return queue.get(size - 1);
     }
 
     public void remove() {
-        if (front == null) {
-            System.out.println("Your deque is already null\n");
-        } else {
-            Node temp = front;
-            front = front.next;
-            if (front == null) {
-                rear = null;
-            } else {
-                front.previous = null;
-            }
-            --size;
-        }
+//        ???????????????????????????????????????
+        T elem = queue.get(0);
+        queue.remove(elem);
+        size--;
     }
 
     public int getSize() {
         return size;
     }
 
-    public void printQueue() {
-        Node nodeQueue = front;
-        System.out.print("\nQueue: ");
-        if (nodeQueue == null) {
-            System.out.println("Your queue is null!\n");
-        } else {
-            while (nodeQueue != null) {
-                System.out.print(nodeQueue.data + " ");
-                nodeQueue = nodeQueue.next;
-            }
-        }
+    public void printQ() {
+        queue.showLinkedList();
     }
 }

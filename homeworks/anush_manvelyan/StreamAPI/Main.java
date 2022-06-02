@@ -1,6 +1,7 @@
 package tech42;
 
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -10,8 +11,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-        List<MobileNumber> mobileNumbersGagik = List.of(new MobileNumber("1"), new MobileNumber("2"));
-        List<MobileNumber> mobileNumbersAftandil = List.of(new MobileNumber("1"), new MobileNumber("2"));
+        List<MobileNumber> phoneNum = List.of(new MobileNumber("1"), new MobileNumber("2"));
+        List<MobileNumber> mobileNumbersGagik = phoneNum;
+        List<MobileNumber> mobileNumbersAftandil = phoneNum;
         List<MobileNumber> mobileNumbersMamikon = List.of(new MobileNumber("1234"), new MobileNumber("3435"), new MobileNumber("1233"));
         List<MobileNumber> mobileNumbersSrapion = List.of(new MobileNumber("3333"), new MobileNumber("123"));
         List<MobileNumber> mobileNumbersAzgush = List.of(new MobileNumber("1233"), new MobileNumber("1234"));
@@ -39,7 +41,7 @@ public class Main {
                 .filter(name -> name.getName().equals("Gagik"))
                 .collect(Collectors.toList());
 
-        System.out.println(aboutGagik.toString());
+        System.out.println(aboutGagik);
         System.out.println();
 
 //        Get student with matching address “1235"
@@ -47,7 +49,7 @@ public class Main {
                 .filter(address -> address.getAddress().getZipcode().equals("1235"))
                 .collect(Collectors.toList());
 
-        System.out.println(address1235.toString());
+        System.out.println(address1235);
         System.out.println();
 
 //        Get all student having mobile numbers 3333.
@@ -61,9 +63,8 @@ public class Main {
 
 //        Get all student having mobile number 1233 and 1234
         List<Student> number1233And1234 = students.stream()
-                .filter(student -> student.getMobileNumbers().stream()
-                        .allMatch(allData -> Objects.equals(allData.getNumber(), "1233")
-                                && Objects.equals(allData.getNumber(), "1234")))
+                .filter(student -> student.getMobileNumbers()
+                        .containsAll(List.of(new MobileNumber("1233"), new MobileNumber("1234"))))
                 .collect(Collectors.toList());
 
         System.out.println();
@@ -93,7 +94,8 @@ public class Main {
 //        Convert List<students> to String
         String listToString = students.stream()
                 .map(Student::getName)
-                .collect(Collectors.joining("\n"));
+                .collect(Collectors.joining(", "));
+
         System.out.println(listToString);
         System.out.println();
 
@@ -131,6 +133,32 @@ public class Main {
                 .filter(student -> student.getAge() > 100)
                 .findAny()
                 .ifPresent(System.out::println);
+
+
+//        Get <List> for MobileNumbers using map
+        List<List<MobileNumber>> listOfListMobileNumbers = students.stream()
+                .map(mobNum -> mobNum.getMobileNumbers())
+                .collect(Collectors.toList());
+
+        System.out.println(listOfListMobileNumbers);
+
+//        Get <List> for MobileNumbers using flatMap
+        List<MobileNumber> listOfMobileNumbers = students.stream()
+                .map(mobNum1 -> mobNum1.getMobileNumbers())
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+
+        System.out.println(listOfMobileNumbers);
+
+//        Get only unique numbers for MobileNumbers
+        List<MobileNumber> uniqueNumbers = students.stream()
+                .map(mobNumUn -> mobNumUn.getMobileNumbers())
+                .flatMap(Collection::stream)
+                .distinct()
+                .collect(Collectors.toList());
+
+        System.out.println(uniqueNumbers);
+
     }
 }
 

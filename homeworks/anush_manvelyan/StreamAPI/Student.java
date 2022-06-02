@@ -1,6 +1,7 @@
 package tech42;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Student {
     private String name;
@@ -55,5 +56,18 @@ public class Student {
                 ", address=" + address +
                 ", mobileNumbers=" + mobileNumbers +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return age == student.age && Objects.equals(name, student.name) && Objects.equals(address, student.address) && mobileNumbers.equals(student.mobileNumbers);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, age, address, mobileNumbers);
     }
 }

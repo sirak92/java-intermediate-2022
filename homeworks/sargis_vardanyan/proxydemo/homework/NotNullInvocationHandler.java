@@ -18,7 +18,7 @@ public class NotNullInvocationHandler<T> implements InvocationHandler {
             if (params[i].getAnnotation(NotNull.class) != null) {
                 if (args[i] == null) {
                     throw new NullPointerException(
-                            method.getName() + " methods " + i + "parameter should not be nul"
+                            method.getName() + " methods " + i + "th parameter should not be nul"
                     );
                 }
             }

@@ -1,3 +1,6 @@
+# Target diractory
+target/*
+
 # Compiled class file
 *.class
 

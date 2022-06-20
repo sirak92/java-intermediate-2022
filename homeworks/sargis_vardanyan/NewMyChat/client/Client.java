@@ -38,6 +38,7 @@ public class Client {
             String line;
             if ((line = sc.nextLine()) != null) {
                 writer.println(name + ": " + line + "\r\n");
+                writer.flush()
             }
         }
     }

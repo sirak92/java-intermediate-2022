@@ -1,0 +1,12 @@
+shop\Post.class
+shop\DeleteServlet.class
+shop\LoginServlet.class
+AddPost.class
+shop\HomeServlet.class
+shop\SingUp.class
+shop\MyAccount.class
+shop\LoggedServlet.class
+shop\LogOutServlet.class
+shop\User.class
+AuthenticationFilter.class
+shop\Db.class
